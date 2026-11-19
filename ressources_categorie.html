@@ -1,0 +1,51 @@
+
+{% extends 'ressources/base.html' %}
+
+{% block title %}{{ categorie.nom }} - EduResources{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+
+    <div>
+        <span class="tag">CATÉGORIE</span>
+        <h1>{{ categorie.nom }}</h1>
+        <p>{{ categorie.description }}</p>
+    </div>
+
+</div>
+
+<div class="resource-grid">
+
+    {% for ressource in ressources %}
+
+    <div class="resource-card">
+
+        <span class="resource-type">{{ ressource.type }}</span>
+
+        <h3>{{ ressource.titre }}</h3>
+
+        <p>{{ ressource.description|truncatewords:15 }}</p>
+
+        <a href="{% url 'detail_ressource' ressource.id %}"
+           class="btn btn-secondary">
+            Voir détails
+        </a>
+
+    </div>
+
+    {% empty %}
+
+    <div class="empty-state">
+        Aucune ressource dans cette catégorie.
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<a href="{% url 'liste_categories' %}" class="back-link">
+    ← Retour aux catégories
+</a>
+
+{% endblock %}

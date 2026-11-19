@@ -1,0 +1,42 @@
+
+{% extends 'ressources/base.html' %}
+
+{% block title %}Supprimer - EduResources{% endblock %}
+
+{% block content %}
+
+<div class="delete-card">
+
+    <div class="delete-icon">!</div>
+
+    <h1>Supprimer la ressource ?</h1>
+
+    <p>
+        Voulez-vous vraiment supprimer
+        <strong>{{ ressource.titre }}</strong> ?
+    </p>
+
+    <p>Cette action est irréversible.</p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="actions" style="justify-content:center;">
+
+            <button type="submit" class="btn btn-danger">
+                Oui, supprimer
+            </button>
+
+            <a href="{% url 'detail_ressource' ressource.id %}"
+               class="btn btn-secondary">
+                Annuler
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

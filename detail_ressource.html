@@ -1,0 +1,60 @@
+
+{% extends 'ressources/base.html' %}
+
+{% block title %}Détails - EduResources{% endblock %}
+
+{% block content %}
+
+<div class="detail-card">
+
+    <span class="resource-type">{{ ressource.type }}</span>
+
+    <h1>{{ ressource.titre }}</h1>
+
+    <div class="detail-info">
+
+        <p>
+            <strong>Description</strong>
+            {{ ressource.description }}
+        </p>
+
+        <p>
+            <strong>Catégorie</strong>
+            {{ ressource.categorie }}
+        </p>
+
+        <p>
+            <strong>Date de création</strong>
+            {{ ressource.date_creation|date:"d/m/Y H:i" }}
+        </p>
+
+        <p>
+            <strong>Lien de la ressource</strong>
+            <a href="{{ ressource.url }}" target="_blank">
+                Consulter la ressource
+            </a>
+        </p>
+
+    </div>
+
+    <div class="actions">
+
+        <a href="{% url 'modifier_ressource' ressource.id %}"
+           class="btn btn-primary">
+            Modifier
+        </a>
+
+        <a href="{% url 'supprimer_ressource' ressource.id %}"
+           class="btn btn-danger">
+            Supprimer
+        </a>
+
+    </div>
+
+    <a href="{% url 'liste_ressources' %}" class="back-link">
+        ← Retour aux ressources
+    </a>
+
+</div>
+
+{% endblock %}

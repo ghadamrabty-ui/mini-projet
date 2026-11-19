@@ -1,0 +1,493 @@
+
+/* =====================================
+   EDU RESOURCES - DESIGN PROFESSIONNEL
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #6c4ce4;
+    --primary-dark: #5032bd;
+    --secondary: #eee9ff;
+    --background: #f6f7fc;
+    --white: #ffffff;
+    --text: #25243a;
+    --muted: #85849a;
+    --border: #e9e8f1;
+    --shadow: 0 8px 30px rgba(44, 35, 90, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--white);
+    min-height: 85px;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    font-size: 23px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, #7655ec, #a48af5);
+    color: white;
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #656477;
+    padding: 10px 17px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+/* CONTENU */
+
+.container {
+    width: 88%;
+    max-width: 1250px;
+    margin: 45px auto;
+    min-height: 65vh;
+}
+
+/* TITRES */
+
+h1 {
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+p {
+    color: var(--muted);
+}
+
+/* BANNIERE ACCUEIL */
+
+.hero {
+    background: linear-gradient(120deg, #6040d0, #987cf0);
+    padding: 75px 65px;
+    border-radius: 25px;
+    color: white;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 35px rgba(108,76,228,0.2);
+}
+
+.hero h1 {
+    color: white;
+    font-size: 43px;
+    max-width: 650px;
+}
+
+.hero p {
+    color: #eee9ff;
+    font-size: 16px;
+    margin: 15px 0 28px;
+}
+
+/* BOUTONS */
+
+.btn,
+button,
+input[type="submit"] {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 13px 23px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(108,76,228,0.2);
+}
+
+/* CARTES */
+
+.card,
+.stat-card,
+.resource-card,
+.category-card {
+    background: white;
+    padding: 25px;
+    border-radius: 17px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover,
+.resource-card:hover,
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(44,35,90,0.12);
+}
+
+/* STATISTIQUES */
+
+.stats,
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-card h2 {
+    color: var(--primary);
+    font-size: 32px;
+    margin: 0;
+}
+
+.stat-card p {
+    font-weight: 600;
+}
+
+/* LISTES ET GRILLES */
+
+.resources-grid,
+.categories-grid,
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 23px;
+}
+
+.resource-card,
+.category-card {
+    margin: 0;
+}
+
+.resource-card a,
+.category-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* RECHERCHE */
+
+.search-card {
+    background: white;
+    padding: 25px;
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.search-form input,
+.search-form select {
+    flex: 1;
+    min-width: 180px;
+}
+
+/* FORMULAIRES */
+
+form {
+    margin-top: 20px;
+}
+
+input:not([type="submit"]),
+select,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    font-family: inherit;
+    font-size: 14px;
+    margin: 7px 0 17px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108,76,228,0.1);
+}
+
+label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* TABLEAUX */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+th, td {
+    padding: 17px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--secondary);
+    color: var(--primary-dark);
+}
+
+/* ALERTES */
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #e7f8ed;
+    color: #21834a;
+}
+
+/* PIED DE PAGE */
+
+footer {
+    background: #24213a;
+    color: white;
+    text-align: center;
+    padding: 27px;
+    margin-top: 70px;
+}
+
+footer p {
+    color: #d0cde0;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .resources-grid,
+    .categories-grid,
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 45px 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 92%;
+    }
+
+    .resources-grid,
+    .categories-grid,
+    .cards-grid,
+    .stats,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .navbar nav a {
+        padding: 8px;
+    }
+}
+
+/* AMELIORATION DES CARTES */
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background: #eee9ff;
+    color: #6c4ce4;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.results-count {
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.resource-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #e9e8f1;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.resource-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(108,76,228,0.12);
+}
+
+.resource-type {
+    display: inline-block;
+    background: #eee9ff;
+    color: #6c4ce4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.resource-info {
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+.empty-state {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+@media(max-width: 850px) {
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 550px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.resource-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.resource-image-placeholder {
+    height: 190px;
+    background: #eee9ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+

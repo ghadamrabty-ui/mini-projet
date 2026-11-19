@@ -1,0 +1,78 @@
+
+{% extends 'ressources/base.html' %}
+
+{% block title %}Accueil - EduResources{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <p style="color:#eee9ff;font-weight:700;">
+        PLATEFORME PÉDAGOGIQUE
+    </p>
+
+    <h1>Apprenez, explorez et progressez.</h1>
+
+    <p>
+        Retrouvez toutes vos ressources pédagogiques
+        dans une seule plateforme.
+    </p>
+
+    <a href="{% url 'liste_ressources' %}" class="btn"
+       style="background:white;color:#6040d0;">
+        Découvrir les ressources →
+    </a>
+</section>
+
+<section>
+    <h2>Vue générale</h2>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div style="font-size:35px;">📚</div>
+            <div>
+                <p>Total des ressources</p>
+                <h2>{{ total_ressources }}</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div style="font-size:35px;">📁</div>
+            <div>
+                <p>Total des catégories</p>
+                <h2>{{ total_categories }}</h2>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section style="margin-top:45px;">
+    <h2>Commencer maintenant</h2>
+
+    <div class="cards-grid">
+
+        <div class="card">
+            <div style="font-size:38px;">📚</div>
+            <h3>Ressources pédagogiques</h3>
+            <p>Consultez toutes les ressources disponibles.</p>
+            <br>
+            <a href="{% url 'liste_ressources' %}" class="btn">
+                Voir les ressources →
+            </a>
+        </div>
+
+        <div class="card">
+            <div style="font-size:38px;">📁</div>
+            <h3>Catégories</h3>
+            <p>Explorez les différentes catégories.</p>
+            <br>
+            <a href="{% url 'liste_categories' %}" class="btn">
+                Voir les catégories →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

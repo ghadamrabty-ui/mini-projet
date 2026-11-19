@@ -1,0 +1,47 @@
+
+{% extends 'ressources/base.html' %}
+
+{% block title %}Catégories - EduResources{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+
+    <div>
+        <span class="tag">ORGANISATION</span>
+        <h1>Nos catégories</h1>
+        <p>Explorez les différentes catégories pédagogiques.</p>
+    </div>
+
+</div>
+
+<div class="category-grid">
+
+    {% for categorie in categories %}
+
+    <div class="category-card">
+
+        <div class="category-icon">📁</div>
+
+        <h3>{{ categorie.nom }}</h3>
+
+        <p>{{ categorie.description|default:"Aucune description." }}</p>
+
+        <a href="{% url 'ressources_categorie' categorie.id %}">
+            Voir les ressources →
+        </a>
+
+    </div>
+
+    {% empty %}
+
+    <div class="empty-state">
+        <h3>Aucune catégorie disponible</h3>
+        <p>Ajoutez des catégories depuis l'administration.</p>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
